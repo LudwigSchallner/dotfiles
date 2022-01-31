@@ -73,7 +73,7 @@ set autoread            " Automatically reload files when externally changed
 set spell               " Spell checking per default
 set nowrap              " Disable line wrapping (with unimpaired use yow to toggle)
 set cursorline          " Highlight the current line
-
+set termguicolors
 " Color scheme
 " The palenight color scheme comes from a plugin which might not be installed.
 " In this case, vim startup should not fail.
@@ -116,7 +116,8 @@ let g:ale_fixers = {
       \ 'python': ['nayvy#ale_fixer', 'black', 'isort'],
       \ }
 
-" Apply black on save
+"let g:semshi#excluded_hl_groups = []
+"" Apply black on save
 autocmd BufWritePre *.py execute ':Black'
 
 " DVC
