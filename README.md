@@ -32,7 +32,7 @@ it is missing.
 
 Clone
 ```bash
-git clone https://github.com/aileoia/dotfiles ~/.dotfiles
+git clone https://github.com/LudwigSchallner/dotfiles ~/.dotfiles
 ```
 
 To install, enter:
