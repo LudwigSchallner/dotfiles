@@ -176,3 +176,5 @@ nnoremap <leader>tlv :Pytest function verbose<CR>
 " Coverage
 nnoremap <leader>cs :Coveragepy show<CR>
 nnoremap <leader>cr :Coveragepy session<CR>
+
+set mouse=nv
