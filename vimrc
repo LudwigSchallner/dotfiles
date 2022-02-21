@@ -178,3 +178,4 @@ nnoremap <leader>cs :Coveragepy show<CR>
 nnoremap <leader>cr :Coveragepy session<CR>
 
 set mouse=nv
+set number
