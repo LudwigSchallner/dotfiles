@@ -81,7 +81,7 @@ silent! colorscheme palenight
 let g:airline_theme = "palenight"
 
 " Auto-pairs
-let g:AutoPairsFlyMode = 1  " Activate Fly mode per default
+let g:AutoPairsFlyMode = 0  " Deactivate Fly mode (default)
 
 " Jedi
 if has("nvim")
