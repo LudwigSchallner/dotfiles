@@ -52,5 +52,6 @@ unset __conda_setup
 
 alias vim=nvim
 export EDITOR=vim
+alias gdp="git push && dvc push"
 
 eval $(thefuck --alias)
