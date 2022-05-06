@@ -9,6 +9,7 @@ Plug 'ervandew/supertab'             " Tab completion in insert mode
 Plug 'fisadev/vim-isort'             " Sort python imports
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 Plug 'jiangmiao/auto-pairs'          " Automatically close brackets
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'majutsushi/tagbar'             " Module/class tag bar
 Plug 'mboughaba/i3config.vim'        " Syntax for i3 config file
 Plug 'mgedmin/python-imports.vim'    " Auto import for Python
@@ -152,19 +153,19 @@ nnoremap gp :Git push<CR>
 nnoremap gb :Git blame<CR>
 
 " Goto's
-nnoremap gn :Semshi goto name next<CR>zO zz
-nnoremap gN :Semshi goto name prev<CR>zO zz
-nnoremap gf :Semshi goto function next<CR>zO zz
-nnoremap gF k:Semshi goto function prev<CR>zO zz
-nnoremap gc :Semshi goto class next<CR>zO zz
-nnoremap gC k:Semshi goto class prev<CR>zO zz
+nnoremap gn :Semshi goto name next<CR>zOzz
+nnoremap gN :Semshi goto name prev<CR>zOzz
+nnoremap gf :Semshi goto function next<CR>zOzt
+nnoremap gF k:Semshi goto function prev<CR>zOzt
+nnoremap gc :Semshi goto class next<CR>zOzt
+nnoremap gC k:Semshi goto class prev<CR>zOzt
 
 " Python Tags
 nnoremap <leader>b :TagbarToggle<CR>
 
 " Got to next and previous linting error
-nnoremap <silent>]w :ALENext<CR>
-nnoremap <silent>[w :ALEPrevious<CR>
+nnoremap <silent>]w :ALENext<CR>zOzz
+nnoremap <silent>[w :ALEPrevious<CR>zOzz
 
 " Pytest
 nnoremap <leader>tt :Pytest project<CR>
