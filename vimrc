@@ -1,5 +1,6 @@
 call plug#begin()
 
+Plug 'APZelos/blamer.nvim'
 Plug 'alfredodeza/coveragepy.vim'    " Python coverage highlight
 Plug 'alfredodeza/pytest.vim'        " Pytest runner plugin
 Plug 'davidhalter/jedi-vim'          " Python IDE features
