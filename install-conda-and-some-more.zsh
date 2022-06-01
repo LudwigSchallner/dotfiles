@@ -17,3 +17,4 @@ pipx install --force ranger-fm
 pipx install --force thefuck
 pipx install --force tox
 pipx install --force ueberzug
+pipx install --force dunk
