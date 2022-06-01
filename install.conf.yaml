@@ -39,3 +39,5 @@
       description: Install vim plugins
     - command: ~/.local/bin/nvim +PlugInstall +qall
       description: Install nvim plugins
+    - command: cp -r ./fonts/ ~/.local/share/fonts/
+      description: Install fonts

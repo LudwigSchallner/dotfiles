@@ -179,11 +179,11 @@ nnoremap <leader>tlv :Pytest function verbose<CR>
 nnoremap <leader>cs :Coveragepy show<CR>
 nnoremap <leader>cr :Coveragepy session<CR>
 
-# activate mouse support
+" activate mouse support
 set mouse=nv
 
-# let there be line numbers
+" let there be line numbers
 set number
 
-# activate git blamer only in visual mode
+" activate git blamer only in visual mode
 let g:blamer_show_in_visual_modes = 0
