@@ -53,5 +53,6 @@ unset __conda_setup
 alias vim=nvim
 export EDITOR=vim
 alias gdp="git push && dvc push"
+alias gdd="git diff | dunk"
 
 eval $(thefuck --alias)
