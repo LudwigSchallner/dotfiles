@@ -1,6 +1,7 @@
 call plug#begin()
 
-Plug 'APZelos/blamer.nvim'
+Plug 'stephpy/vim-yaml'              " yaml syntax highlight
+Plug 'tveskag/nvim-blame-line'           " Git blamer
 Plug 'alfredodeza/coveragepy.vim'    " Python coverage highlight
 Plug 'alfredodeza/pytest.vim'        " Pytest runner plugin
 Plug 'davidhalter/jedi-vim'          " Python IDE features
@@ -179,11 +180,12 @@ nnoremap <leader>tlv :Pytest function verbose<CR>
 nnoremap <leader>cs :Coveragepy show<CR>
 nnoremap <leader>cr :Coveragepy session<CR>
 
-" activate mouse support
+" blamer
+nnoremap <silent> <leader>b :ToggleBlameLine<CR>
+
+"activate mouse support
 set mouse=nv
 
 " let there be line numbers
 set number
 
-" activate git blamer only in visual mode
-let g:blamer_show_in_visual_modes = 0

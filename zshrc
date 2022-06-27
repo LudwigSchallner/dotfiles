@@ -56,3 +56,4 @@ alias gdp="git push && dvc push"
 alias gdd="git diff | dunk"
 
 eval $(thefuck --alias)
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
