@@ -1,7 +1,6 @@
 call plug#begin()
 
-Plug 'stephpy/vim-yaml'              " yaml syntax highlight
-Plug 'tveskag/nvim-blame-line'           " Git blamer
+Plug 'tveskag/nvim-blame-line'       " Git blamer
 Plug 'alfredodeza/coveragepy.vim'    " Python coverage highlight
 Plug 'alfredodeza/pytest.vim'        " Pytest runner plugin
 Plug 'davidhalter/jedi-vim'          " Python IDE features
@@ -15,9 +14,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'majutsushi/tagbar'             " Module/class tag bar
 Plug 'mboughaba/i3config.vim'        " Syntax for i3 config file
 Plug 'mgedmin/python-imports.vim'    " Auto import for Python
-Plug 'pedrohdz/vim-yaml-folds'       " Yaml folding
+"Plug 'pedrohdz/vim-yaml-folds'       " Yaml folding
 Plug 'preservim/nerdtree'            " File system navigation
-Plug 'psf/black', {'tag': '19.10b0'} " Python formatting
+Plug 'psf/black', {'tag': '22.8.0'} " Python formatting
 Plug 'relastle/vim-nayvy'            " Python imports
 Plug 'sheerun/vim-polyglot'          " Color syntax for any language
 Plug 'tmhedberg/SimpylFold'          " Python folding
@@ -186,6 +185,42 @@ nnoremap <silent> <leader>b :ToggleBlameLine<CR>
 "activate mouse support
 set mouse=nv
 
-" let there be line numbers
-set number
+autocmd FileType yaml setlocal foldmethod=expr
+autocmd FileType yaml setlocal foldexpr=GetPotionFold(v:lnum)
 
+function! GetPotionFold(lnum)
+    if getline(a:lnum) =~? '\v^\s*$'
+        return '-1'
+    endif
+    let this_indent = IndentLevel(a:lnum)
+    let next_indent = IndentLevel(NextNonBlankLine(a:lnum))
+
+    if next_indent == this_indent
+        return this_indent
+    elseif next_indent < this_indent
+        return this_indent
+    elseif next_indent > this_indent
+        return '>' . next_indent
+    endif
+endfunction
+
+function! IndentLevel(lnum)
+    return indent(a:lnum) / &shiftwidth
+endfunction
+
+function! NextNonBlankLine(lnum)
+    let numlines = line('$')
+    let current = a:lnum + 1
+
+    while current <= numlines
+        if getline(current) =~? '\v\S'
+            return current
+        endif
+        let current += 1
+    endwhile
+
+    return -2
+endfunction
+
+set number
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

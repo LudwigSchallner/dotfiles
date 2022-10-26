@@ -52,8 +52,10 @@ unset __conda_setup
 
 alias vim=nvim
 export EDITOR=vim
-alias gdp="git push && dvc push"
-alias gdd="git diff | dunk"
-
+alias gds="git diff --staged | dunk | less -R"
+alias gd="git diff | dunk | less -R"
+alias gbc="git branch --create "
+alias gl="git pull --ff-only"
+alias gl!="git pull"
+plugins=(git ssh-agent)
 eval $(thefuck --alias)
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
