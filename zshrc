@@ -52,10 +52,15 @@ unset __conda_setup
 
 alias vim=nvim
 export EDITOR=vim
-alias gds="git diff --staged | dunk | less -R"
-alias gd="git diff | dunk | less -R"
+alias gds="git diff --staged | dunk | less -R "
+alias gd="git diff | dunk | less -R "
 alias gbc="git branch --create "
-alias gl="git pull --ff-only"
-alias gl!="git pull"
-plugins=(git ssh-agent)
+alias gl="git pull --ff-only "
+alias gl!="git pull "
+alias dp="dvc push "
+alias dl="dvc pull "
+alias dr="dvc repro "
+alias drd="dvc repro --dry "
+alias dst="dvc status "
 eval $(thefuck --alias)
+
