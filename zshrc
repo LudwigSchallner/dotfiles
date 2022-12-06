@@ -52,8 +52,8 @@ unset __conda_setup
 
 alias vim=nvim
 export EDITOR=vim
-alias gds="git diff --staged | dunk | less -R "
-alias gd="git diff | dunk | less -R "
+alias gd="git diff "
+alias gds="git diff --staged"
 alias gbc="git branch --create "
 alias gl="git pull --ff-only "
 alias gl!="git pull "
