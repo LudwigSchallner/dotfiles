@@ -32,6 +32,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'  " Pandoc (markdown) syntax
 Plug 'vim-scripts/bats.vim'          " Syntax highlighting for bats
 Plug 'Xuyuanp/nerdtree-git-plugin'   " Git integration for NerdTree
 Plug 'zhou13/vim-easyescape/'        " Map jk and kj to <ESC>
+Plug 'sainnhe/everforest'
 
 if has('nvim')
     Plug 'deoplete-plugins/deoplete-jedi'
