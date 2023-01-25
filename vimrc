@@ -33,6 +33,7 @@ Plug 'vim-scripts/bats.vim'          " Syntax highlighting for bats
 Plug 'Xuyuanp/nerdtree-git-plugin'   " Git integration for NerdTree
 Plug 'zhou13/vim-easyescape/'        " Map jk and kj to <ESC>
 Plug 'sainnhe/everforest'
+Plug 'rickhowe/diffchar.vim'
 
 if has('nvim')
     Plug 'deoplete-plugins/deoplete-jedi'
@@ -225,3 +226,6 @@ endfunction
 
 set number
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+let g:DiffUnit="Char"
+let g:DiffColors=1
