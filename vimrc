@@ -1,8 +1,9 @@
 call plug#begin()
 
-Plug 'tveskag/nvim-blame-line'       " Git blamer
+Plug 'Xuyuanp/nerdtree-git-plugin'   " Git integration for NerdTree
 Plug 'alfredodeza/coveragepy.vim'    " Python coverage highlight
 Plug 'alfredodeza/pytest.vim'        " Pytest runner plugin
+Plug 'chrisbra/csv.vim'              " CSV tool
 Plug 'davidhalter/jedi-vim'          " Python IDE features
 Plug 'dense-analysis/ale'            " Asynchronous linting
 Plug 'drewtempelmeyer/palenight.vim' " Color scheme
@@ -14,10 +15,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'majutsushi/tagbar'             " Module/class tag bar
 Plug 'mboughaba/i3config.vim'        " Syntax for i3 config file
 Plug 'mgedmin/python-imports.vim'    " Auto import for Python
-"Plug 'pedrohdz/vim-yaml-folds'       " Yaml folding
+Plug 'pedrohdz/vim-yaml-folds'       " Yaml folding
 Plug 'preservim/nerdtree'            " File system navigation
 Plug 'psf/black', {'tag': '22.8.0'} " Python formatting
 Plug 'relastle/vim-nayvy'            " Python imports
+Plug 'rickhowe/diffchar.vim'         " git diff character wise
+Plug 'sainnhe/everforest'
 Plug 'sheerun/vim-polyglot'          " Color syntax for any language
 Plug 'tmhedberg/SimpylFold'          " Python folding
 Plug 'tpope/vim-eunuch'              " UNIX commands
@@ -26,14 +29,12 @@ Plug 'tpope/vim-repeat'              " '.' repeating maps from plugins
 Plug 'tpope/vim-sensible'            " Sensible defaults
 Plug 'tpope/vim-surround'            " Brackets and parenthesis and such
 Plug 'tpope/vim-unimpaired'          " See the help
+Plug 'tveskag/nvim-blame-line'       " Git blamer
 Plug 'vim-airline/vim-airline'       " Nice status line
 Plug 'vim-pandoc/vim-pandoc'         " Pandoc integration
 Plug 'vim-pandoc/vim-pandoc-syntax'  " Pandoc (markdown) syntax
 Plug 'vim-scripts/bats.vim'          " Syntax highlighting for bats
-Plug 'Xuyuanp/nerdtree-git-plugin'   " Git integration for NerdTree
 Plug 'zhou13/vim-easyescape/'        " Map jk and kj to <ESC>
-Plug 'sainnhe/everforest'
-Plug 'rickhowe/diffchar.vim'
 
 if has('nvim')
     Plug 'deoplete-plugins/deoplete-jedi'
@@ -66,6 +67,7 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
+filetype plugin on
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 set showcmd		" Show (partial) command in status line.
@@ -186,43 +188,6 @@ nnoremap <silent> <leader>b :ToggleBlameLine<CR>
 
 "activate mouse support
 set mouse=nv
-
-autocmd FileType yaml setlocal foldmethod=expr
-autocmd FileType yaml setlocal foldexpr=GetPotionFold(v:lnum)
-
-function! GetPotionFold(lnum)
-    if getline(a:lnum) =~? '\v^\s*$'
-        return '-1'
-    endif
-    let this_indent = IndentLevel(a:lnum)
-    let next_indent = IndentLevel(NextNonBlankLine(a:lnum))
-
-    if next_indent == this_indent
-        return this_indent
-    elseif next_indent < this_indent
-        return this_indent
-    elseif next_indent > this_indent
-        return '>' . next_indent
-    endif
-endfunction
-
-function! IndentLevel(lnum)
-    return indent(a:lnum) / &shiftwidth
-endfunction
-
-function! NextNonBlankLine(lnum)
-    let numlines = line('$')
-    let current = a:lnum + 1
-
-    while current <= numlines
-        if getline(current) =~? '\v\S'
-            return current
-        endif
-        let current += 1
-    endwhile
-
-    return -2
-endfunction
 
 set number
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
