@@ -192,5 +192,12 @@ set mouse=nv
 set number
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-let g:DiffUnit="Char"
-let g:DiffColors=1
+let g:DiffUnit="Word"
+hi DiffAdd guibg=DarkGreen guifg=NONE
+hi DiffDelete guifg=NONE guibg=#800800
+hi DiffChange guifg=NONE guibg=NONE
+hi DiffText guifg=NONE guibg=Green
+hi dcDiffAdd guibg=NONE guibg=Green
+hi dcDiffChange guibg=Red guifg=NONE
+hi dcDiffText  guifg=NONE guibg=Green
+
