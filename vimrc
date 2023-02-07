@@ -15,14 +15,17 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'majutsushi/tagbar'             " Module/class tag bar
 Plug 'mboughaba/i3config.vim'        " Syntax for i3 config file
 Plug 'mgedmin/python-imports.vim'    " Auto import for Python
+Plug 'morhetz/gruvbox'               " color scheme
 Plug 'pedrohdz/vim-yaml-folds'       " Yaml folding
 Plug 'preservim/nerdtree'            " File system navigation
 Plug 'psf/black', {'tag': '22.8.0'} " Python formatting
+Plug 'rebelot/kanagawa.nvim'         " Color scheme
 Plug 'relastle/vim-nayvy'            " Python imports
 Plug 'rickhowe/diffchar.vim'         " git diff character wise
 Plug 'sainnhe/everforest'
 Plug 'sheerun/vim-polyglot'          " Color syntax for any language
 Plug 'tmhedberg/SimpylFold'          " Python folding
+Plug 'tomasr/molokai'                " Color scheme
 Plug 'tpope/vim-eunuch'              " UNIX commands
 Plug 'tpope/vim-fugitive'            " Git support
 Plug 'tpope/vim-repeat'              " '.' repeating maps from plugins
@@ -83,8 +86,8 @@ set termguicolors
 " Color scheme
 " The palenight color scheme comes from a plugin which might not be installed.
 " In this case, vim startup should not fail.
-silent! colorscheme palenight
-let g:airline_theme = "palenight"
+silent! colorscheme gruvbox
+let g:airline_theme = "gruvbox"
 
 " Auto-pairs
 let g:AutoPairsFlyMode = 0  " Deactivate Fly mode (default)
