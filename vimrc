@@ -3,7 +3,8 @@ call plug#begin()
 Plug 'Xuyuanp/nerdtree-git-plugin'   " Git integration for NerdTree
 Plug 'alfredodeza/coveragepy.vim'    " Python coverage highlight
 Plug 'alfredodeza/pytest.vim'        " Pytest runner plugin
-Plug 'chrisbra/csv.vim'              " CSV tool
+"Plug 'chrisbra/csv.vim'              " CSV tool
+Plug 'mechatroner/rainbow_csv'       " 
 Plug 'davidhalter/jedi-vim'          " Python IDE features
 Plug 'dense-analysis/ale'            " Asynchronous linting
 Plug 'drewtempelmeyer/palenight.vim' " Color scheme
@@ -87,7 +88,6 @@ set termguicolors
 " The palenight color scheme comes from a plugin which might not be installed.
 " In this case, vim startup should not fail.
 silent! colorscheme gruvbox
-let g:airline_theme = "gruvbox"
 
 " Auto-pairs
 let g:AutoPairsFlyMode = 0  " Deactivate Fly mode (default)
@@ -157,8 +157,8 @@ nnoremap <C-n> :NERDTreeToggleVCS<CR>
 
 " Fugitive
 nnoremap gs :wa<CR> :vertical Git<CR>
-nnoremap gp :Git push<CR>
-nnoremap gb :Git blame<CR>
+nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gb :Git blame<CR>
 
 " Goto's
 nnoremap gn :Semshi goto name next<CR>zOzz
@@ -196,11 +196,3 @@ set number
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 let g:DiffUnit="Word"
-hi DiffAdd guibg=DarkGreen guifg=NONE
-hi DiffDelete guifg=NONE guibg=#800800
-hi DiffChange guifg=NONE guibg=NONE
-hi DiffText guifg=NONE guibg=Green
-hi dcDiffAdd guibg=NONE guibg=Green
-hi dcDiffChange guibg=Red guifg=NONE
-hi dcDiffText  guifg=NONE guibg=Green
-
