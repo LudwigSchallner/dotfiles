@@ -42,3 +42,5 @@
       description: Install nvim plugins
     - command: cp -r ./fonts/ ~/.local/share/fonts/
       description: Install fonts
+    - command: cp -rf ./config/vimspector/* ~/.config/nvim/plugged/vimspector/configurations/linux/*
+      description: Install vimspector configurations

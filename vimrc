@@ -39,6 +39,7 @@ Plug 'vim-pandoc/vim-pandoc'         " Pandoc integration
 Plug 'vim-pandoc/vim-pandoc-syntax'  " Pandoc (markdown) syntax
 Plug 'vim-scripts/bats.vim'          " Syntax highlighting for bats
 Plug 'zhou13/vim-easyescape/'        " Map jk and kj to <ESC>
+Plug 'Puremourning/vimspector'       " Debugger
 
 if has('nvim')
     Plug 'deoplete-plugins/deoplete-jedi'
@@ -186,8 +187,6 @@ nnoremap <leader>tlv :Pytest function verbose<CR>
 nnoremap <leader>cs :Coveragepy show<CR>
 nnoremap <leader>cr :Coveragepy session<CR>
 
-" blamer
-nnoremap <silent> <leader>b :ToggleBlameLine<CR>
 
 "activate mouse support
 set mouse=nv
@@ -196,3 +195,14 @@ set number
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 let g:DiffUnit="Word"
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+
+nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
+
+nmap <Leader>dk <Plug>VimspectorRestart
+nmap <Leader>dh <Plug>VimspectorStepOut
+nmap <Leader>dl <Plug>VimspectorStepInto
+nmap <Leader>dj <Plug>VimspectorStepOver

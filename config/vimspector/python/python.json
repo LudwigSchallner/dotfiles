@@ -1,0 +1,42 @@
+{
+  "configurations": {
+    "python": {
+      "adapter": "debugpy",
+      "variables": [{
+        "python":  { "shell": "/bin/bash -cu 'echo $$(which python)'" }
+      }
+      ],
+      "configuration": {
+        "name": "python",
+        "type": "python",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "python": "${python}",
+        "stopOnEntry": true,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "program": "${file}"
+      }
+    },
+    "pytest": {
+      "adapter": "debugpy",
+      "variables": [{
+        "python":  { "shell": "/bin/bash -cu 'echo $$(which python)'" }
+      }
+      ],
+      "configuration": {
+        "name": "pytest",
+        "type": "python",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "python": "${python}",
+        "module": "pytest",
+        "args": [
+          "-v",
+          "${Test:${file\\}}"
+        ],
+        "console": "externalTerminal",
+        "debugOptions": []
+      }}
+  }
+}
