@@ -10,9 +10,8 @@ source zshrc
 pip install --force-reinstall --user pipx pynvim jedi
 pipx install --force black
 pipx install --force dvc"[all]"
-pipx install --force flake8
-pipx install --force isort
 pipx install --force pre-commit
+pipx install --force ruff
 pipx install --force ranger-fm
 pipx install --force thefuck
 pipx install --force tox
