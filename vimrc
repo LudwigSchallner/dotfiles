@@ -44,9 +44,8 @@ Plug 'Puremourning/vimspector'       " Debugger
 if has('nvim')
     Plug 'deoplete-plugins/deoplete-jedi'
     Plug 'deoplete-plugins/deoplete-dictionary'
-    Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Semantic highlighting
+    Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
     let g:python3_host_prog='~/miniconda3/bin/python3'
 endif
 
@@ -125,10 +124,14 @@ nmap <silent> <leader>ds <Plug>(pydocstring)
 let g:ale_fixers = {
       \ 'python': ['nayvy#ale_fixer', 'black', 'isort'],
       \ }
+augroup python_format
+    autocmd!
+    autocmd BufWritePost *.py silent !black %
+augroup end
 
 "let g:semshi#excluded_hl_groups = []
 "" Apply black on save
-autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePost *.py silent !black %
 
 " DVC
 autocmd! BufNewFile,BufRead Dvcfile,*.dvc,dvc.lock setfiletype yaml
