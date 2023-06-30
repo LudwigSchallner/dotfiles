@@ -6,6 +6,8 @@
 - clean: ['~']
 - create:
     - ~/.local/bin
+    - ~/.config/nvim/lua/
+    - ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/
 - shell:
     - command: git submodule update --init --recursive
       description: Installing submodules
@@ -19,9 +21,7 @@
     ~/.config/ranger/rc.conf: config/ranger/rc.conf
     ~/.config/regolith2/i3/config.d/40_default-style: config/regolith2/i3/config.d/40_default-style
     ~/.gitignore:
-    ~/.local/share/nvim/site/autoload/plug.vim: submodules/vim-plug/plug.vim
     ~/.p10k.zsh:
-    ~/.vim/autoload/plug.vim: submodules/vim-plug/plug.vim
     ~/.vimrc:
     ~/.zshrc:
 - shell:
@@ -37,9 +37,11 @@
         wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -O ~/.local/bin/nvim
         chmod +x ~/.local/bin/nvim
       description: Download and reinstall nvim
-    - command: mkdir -p ~/.config/nvim/lua/
-      description: Create path for packer config
-    - command: ln -sf config/nvim/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
+    - command: |
+        rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+        git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+      description: Install packer as neovim package manager
+    - command: cp -f ./config/nvim/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
       description: Copy plugin list to destination folder
     - command: ~/.local/bin/nvim +PackerCompile +qall
       description: Compile vim plugins
@@ -48,11 +50,5 @@
     - command: cp -r ./fonts/ ~/.local/share/fonts/
       description: Install fonts
       # yamllint disable rule:line-length
-    - command: |
-        mkdir -p ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/
-      description: Create folder structure for vimspector
-      # yamllint disable rule:line-length
-    - command: |
-        ln -sf ./config/vimspector/python.json /
-        ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/
+    - command: cp -f ./config/vimspector/python.json ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/python.json
       description: Install vimspector configurations
