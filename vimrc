@@ -16,13 +16,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'majutsushi/tagbar'             " Module/class tag bar
 Plug 'mboughaba/i3config.vim'        " Syntax for i3 config file
 Plug 'mgedmin/python-imports.vim'    " Auto import for Python
-Plug 'morhetz/gruvbox'               " color scheme
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'pedrohdz/vim-yaml-folds'       " Yaml folding
 Plug 'preservim/nerdtree'            " File system navigation
 Plug 'psf/black', {'tag': '22.8.0'} " Python formatting
 Plug 'rebelot/kanagawa.nvim'         " Color scheme
 Plug 'relastle/vim-nayvy'            " Python imports
-Plug 'rickhowe/diffchar.vim'         " git diff character wise
+"Plug 'rickhowe/diffchar.vim'         " git diff character wise
 Plug 'sainnhe/everforest'
 Plug 'sheerun/vim-polyglot'          " Color syntax for any language
 Plug 'tmhedberg/SimpylFold'          " Python folding
@@ -40,6 +40,8 @@ Plug 'vim-pandoc/vim-pandoc-syntax'  " Pandoc (markdown) syntax
 Plug 'vim-scripts/bats.vim'          " Syntax highlighting for bats
 Plug 'zhou13/vim-easyescape/'        " Map jk and kj to <ESC>
 Plug 'Puremourning/vimspector'       " Debugger
+Plug 'sindrets/diffview.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 
 if has('nvim')
     Plug 'deoplete-plugins/deoplete-jedi'
@@ -197,7 +199,7 @@ set mouse=nv
 set number
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-let g:DiffUnit="Word"
+"let g:DiffUnit="Word"
 nnoremap <Leader>dd :call vimspector#Launch()<CR>
 nnoremap <Leader>de :call vimspector#Reset()<CR>
 nnoremap <Leader>dc :call vimspector#Continue()<CR>
@@ -209,3 +211,5 @@ nmap <Leader>dk <Plug>VimspectorRestart
 nmap <Leader>dh <Plug>VimspectorStepOut
 nmap <Leader>dl <Plug>VimspectorStepInto
 nmap <Leader>dj <Plug>VimspectorStepOver
+nmap do :DiffviewOpen<CR>
+nmap dc :DiffviewClose<CR>
