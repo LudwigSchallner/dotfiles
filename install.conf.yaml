@@ -10,6 +10,7 @@
     - command: git submodule update --init --recursive
       description: Installing submodules
 - link:
+    # yamllint disable rule:line-length
     ~/.antigen: submodules/antigen
     ~/.config/feh/themes: config/feh/themes
     ~/.config/i3/config: config/i3.config
@@ -36,11 +37,22 @@
         wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -O ~/.local/bin/nvim
         chmod +x ~/.local/bin/nvim
       description: Download and reinstall nvim
-    - command: vim +PlugInstall +qall
-      description: Install vim plugins
-    - command: ~/.local/bin/nvim +PlugInstall +qall
+    - command: mkdir -p ~/.config/nvim/lua/
+      description: Create path for packer config
+    - command: ln -sf config/nvim/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
+      description: Copy plugin list to destination folder
+    - command: ~/.local/bin/nvim +PackerCompile +qall
+      description: Compile vim plugins
+    - command: ~/.local/bin/nvim +PackerInstall +qall
       description: Install nvim plugins
     - command: cp -r ./fonts/ ~/.local/share/fonts/
       description: Install fonts
-    - command: cp -rf ./config/vimspector/* ~/.config/nvim/plugged/vimspector/configurations/linux/*
+      # yamllint disable rule:line-length
+    - command: |
+        mkdir -p ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/
+      description: Create folder structure for vimspector
+      # yamllint disable rule:line-length
+    - command: |
+        ln -sf ./config/vimspector/python.json /
+        ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/
       description: Install vimspector configurations
