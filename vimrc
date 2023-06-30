@@ -1,58 +1,5 @@
-call plug#begin()
-
-Plug 'Xuyuanp/nerdtree-git-plugin'   " Git integration for NerdTree
-Plug 'alfredodeza/coveragepy.vim'    " Python coverage highlight
-Plug 'alfredodeza/pytest.vim'        " Pytest runner plugin
-"Plug 'chrisbra/csv.vim'              " CSV tool
-Plug 'mechatroner/rainbow_csv'       " 
-Plug 'davidhalter/jedi-vim'          " Python IDE features
-Plug 'dense-analysis/ale'            " Asynchronous linting
-Plug 'drewtempelmeyer/palenight.vim' " Color scheme
-Plug 'ervandew/supertab'             " Tab completion in insert mode
-Plug 'fisadev/vim-isort'             " Sort python imports
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
-Plug 'jiangmiao/auto-pairs'          " Automatically close brackets
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'majutsushi/tagbar'             " Module/class tag bar
-Plug 'mboughaba/i3config.vim'        " Syntax for i3 config file
-Plug 'mgedmin/python-imports.vim'    " Auto import for Python
-Plug 'ellisonleao/gruvbox.nvim'
-Plug 'pedrohdz/vim-yaml-folds'       " Yaml folding
-Plug 'preservim/nerdtree'            " File system navigation
-Plug 'psf/black', {'tag': '22.8.0'} " Python formatting
-Plug 'rebelot/kanagawa.nvim'         " Color scheme
-Plug 'relastle/vim-nayvy'            " Python imports
-"Plug 'rickhowe/diffchar.vim'         " git diff character wise
-Plug 'sainnhe/everforest'
-Plug 'sheerun/vim-polyglot'          " Color syntax for any language
-Plug 'tmhedberg/SimpylFold'          " Python folding
-Plug 'tomasr/molokai'                " Color scheme
-Plug 'tpope/vim-eunuch'              " UNIX commands
-Plug 'tpope/vim-fugitive'            " Git support
-Plug 'tpope/vim-repeat'              " '.' repeating maps from plugins
-Plug 'tpope/vim-sensible'            " Sensible defaults
-Plug 'tpope/vim-surround'            " Brackets and parenthesis and such
-Plug 'tpope/vim-unimpaired'          " See the help
-Plug 'tveskag/nvim-blame-line'       " Git blamer
-Plug 'vim-airline/vim-airline'       " Nice status line
-Plug 'vim-pandoc/vim-pandoc'         " Pandoc integration
-Plug 'vim-pandoc/vim-pandoc-syntax'  " Pandoc (markdown) syntax
-Plug 'vim-scripts/bats.vim'          " Syntax highlighting for bats
-Plug 'zhou13/vim-easyescape/'        " Map jk and kj to <ESC>
-Plug 'Puremourning/vimspector'       " Debugger
-Plug 'sindrets/diffview.nvim'
-Plug 'nvim-tree/nvim-web-devicons'
-
-if has('nvim')
-    Plug 'deoplete-plugins/deoplete-jedi'
-    Plug 'deoplete-plugins/deoplete-dictionary'
-    Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    let g:python3_host_prog='~/miniconda3/bin/python3'
-endif
-
-call plug#end()
-
+lua require('plugins')
+let g:python3_host_prog='~/miniconda3/bin/python3'
 if has("syntax")
   syntax on
 endif
@@ -100,12 +47,6 @@ if has("nvim")
 endif
 
 " Deoplete
-if has('nvim')
-    " Enable autocompletion at startup
-    let g:deoplete#enable_at_startup = 1
-    " Increase delay because of Semshi
-    call deoplete#custom#option('auto_complete_delay', 200)
-endif
 
 " Surround
 let b:surround_indent = 1
