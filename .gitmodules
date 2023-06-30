@@ -4,6 +4,3 @@
 [submodule "antigen"]
 	path = submodules/antigen
 	url = https://github.com/zsh-users/antigen.git
-[submodule "vim-plug"]
-	path = submodules/vim-plug
-	url = https://github.com/junegunn/vim-plug
