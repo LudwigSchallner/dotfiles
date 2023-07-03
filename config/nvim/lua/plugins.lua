@@ -39,11 +39,11 @@ return require('packer').startup(function(use)
 	use 'vim-pandoc/vim-pandoc'         -- Pandoc integration
 	use 'vim-pandoc/vim-pandoc-syntax'  -- Pandoc (markdown) syntax
 	use 'vim-scripts/bats.vim'          -- Syntax highlighting for bats
-	use 'zhou13/vim-easyescape'        -- Map jk and kj to <ESC>
+	use 'zhou13/vim-easyescape'         -- Map jk and kj to <ESC>
 	use 'Puremourning/vimspector'       -- Debugger
 	use 'sindrets/diffview.nvim'
 	use 'nvim-tree/nvim-web-devicons'
   use 'deoplete-plugins/deoplete-jedi'
   use 'deoplete-plugins/deoplete-dictionary'
-  use 'numirias/semshi'
+  use 'wookayin/semshi'
 end)
