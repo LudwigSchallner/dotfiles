@@ -24,6 +24,8 @@
     ~/.p10k.zsh:
     ~/.vimrc:
     ~/.zshrc:
+    ~/.config/nvim/lua/plugins.lua: config/nvim/lua/plugins.lua 
+    ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/python.json: config/vimspector/python.json
 - shell:
     - command: |
         if ! cat ~/.bashrc | grep "exec zsh"
@@ -41,8 +43,6 @@
         rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
         git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
       description: Install packer as neovim package manager
-    - command: cp -f ./config/nvim/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
-      description: Copy plugin list to destination folder
     - command: ~/.local/bin/nvim +PackerCompile +qall
       description: Compile vim plugins
     - command: ~/.local/bin/nvim +PackerInstall +qall
@@ -50,5 +50,3 @@
     - command: cp -r ./fonts/ ~/.local/share/fonts/
       description: Install fonts
       # yamllint disable rule:line-length
-    - command: cp -f ./config/vimspector/python.json ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/python.json
-      description: Install vimspector configurations
