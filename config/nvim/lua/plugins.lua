@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
 	use 'mboughaba/i3config.vim'        -- Syntax for i3 config file
 	use 'mgedmin/python-imports.vim'    -- Auto import for Python
 	use 'ellisonleao/gruvbox.nvim'
+	use 'ribru17/bamboo.nvim'
 	use 'pedrohdz/vim-yaml-folds'       -- Yaml folding
 	use 'preservim/nerdtree'            -- File system navigation
 	use 'psf/black'
@@ -46,4 +47,10 @@ return require('packer').startup(function(use)
   use 'deoplete-plugins/deoplete-jedi'
   use 'deoplete-plugins/deoplete-dictionary'
   use 'wookayin/semshi'
+	use 'zaldih/themery.nvim' 
+	use { 'tzachar/highlight-undo.nvim', config = function()  require('highlight-undo').setup({
+    hlgroup = 'HighlightUndo',
+    duration = 5000,
+})end}
 end)
+
