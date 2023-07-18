@@ -87,6 +87,7 @@ nnoremap <leader>w :wa<CR>
 nnoremap <leader>q :x<CR>
 nnoremap <leader>x :xa<CR>
 
+let g:ale_echo_msg_format = '%linter% says %code%: %s'
 " Navigation between windows
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
