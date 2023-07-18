@@ -52,5 +52,16 @@ return require('packer').startup(function(use)
     hlgroup = 'HighlightUndo',
     duration = 5000,
 })end}
+  use {
+  'harrisoncramer/gitlab.nvim',
+  requires = {
+    "MunifTanjim/nui.nvim",
+    "nvim-lua/plenary.nvim"
+  },
+  run = function() require("gitlab").build() end,
+  config = function()
+    require("gitlab").setup()
+  end,
+}
 end)
 
