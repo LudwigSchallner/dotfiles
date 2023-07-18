@@ -52,6 +52,7 @@ unset __conda_setup
 
 alias vim=nvim
 export EDITOR=vim
+export LC_ALL="de_DE.UTF-8"
 alias gd="git diff "
 alias gds="git diff --staged"
 alias gbc="git branch --create "
