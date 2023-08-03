@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
 })end}
   use {
   'harrisoncramer/gitlab.nvim',
+	branch = 'self-hosted',
   requires = {
     "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim"
@@ -64,4 +65,3 @@ return require('packer').startup(function(use)
   end,
 }
 end)
-
