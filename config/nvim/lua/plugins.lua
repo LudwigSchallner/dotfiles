@@ -1,7 +1,6 @@
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
   use 'Xuyuanp/nerdtree-git-plugin'   -- Git integration for NerdTree
 	use 'alfredodeza/coveragepy.vim'    -- Python coverage highlight
 	use 'alfredodeza/pytest.vim'        -- Pytest runner plugin
@@ -48,20 +47,23 @@ return require('packer').startup(function(use)
   use 'deoplete-plugins/deoplete-dictionary'
   use 'wookayin/semshi'
 	use 'zaldih/themery.nvim' 
-	use { 'tzachar/highlight-undo.nvim', config = function()  require('highlight-undo').setup({
-    hlgroup = 'HighlightUndo',
-    duration = 5000,
-})end}
+	use {
+		'tzachar/highlight-undo.nvim', 
+		config = function()  require('highlight-undo').setup({
+			hlgroup = 'HighlightUndo',
+			duration = 5000,
+		})end
+	}
   use {
-  'harrisoncramer/gitlab.nvim',
-	branch = 'self-hosted',
-  requires = {
-    "MunifTanjim/nui.nvim",
-    "nvim-lua/plenary.nvim"
-  },
-  run = function() require("gitlab").build() end,
-  config = function()
-    require("gitlab").setup()
-  end,
-}
+  	'harrisoncramer/gitlab.nvim',
+		branch = 'self-hosted',
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim"
+		},
+		run = function() require("gitlab").build() end,
+		config = function()
+			require("gitlab").setup()
+		end,
+	}
 end)
