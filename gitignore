@@ -10,3 +10,5 @@ tags.temp
 
 # PyCharm related
 .idea
+
+.gitlab.nvim
