@@ -22,7 +22,6 @@
     ~/.config/regolith2/i3/config.d/40_default-style: config/regolith2/i3/config.d/40_default-style
     ~/.gitignore:
     ~/.p10k.zsh:
-    ~/.vimrc:
     ~/.zshrc:
     ~/.config/nvim/lua/plugins.lua: config/nvim/lua/plugins.lua 
     ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/python.json: config/vimspector/python.json
