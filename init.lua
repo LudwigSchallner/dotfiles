@@ -42,8 +42,8 @@ nmapsilent("<leader>ds", "<Plug>(pydocstring)") -- configure numpy formatting fo
 vim.b.surround_indent = 1 -- surround
 -- package settings
 require("gitlab").setup({
-  base_branch = "main",
   port = 20136, -- The port of the Go server, which runs in the background
+  log_path = vim.fn.stdpath("cache"), -- Log path for the Go server
   keymaps = {
     popup = { -- The popup for comment creation, editing, and replying
       exit = "<Esc>",
