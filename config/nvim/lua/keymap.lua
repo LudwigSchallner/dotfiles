@@ -14,6 +14,36 @@ end
 function imap(shortcut, command)
   map('i', shortcut, command)
 end
+
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<space>f', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+  end,
+})
 -- Save and quit quickly
 nmapsilent("<leader>w", ":wa<CR>")
 nmapsilent("<leader>q", ":x<CR>")
@@ -33,27 +63,6 @@ nmap("<C-n>", ":NERDTreeToggleVCS<CR>")
 nmap("gs", ":wa<CR> :vertical Git<CR>")
 nmap("<leader>gp", ":Git push<CR>")
 nmap("<leader>gb", ":Git blame<CR>")
--- Goto's
-nmap("gn", ":Semshi goto name next<CR>zOzz")
-nmap("gN", ":Semshi goto name prev<CR>zOzz")
-nmap("gf", ":Semshi goto function next<CR>zOzt")
-nmap("gF", "k:Semshi goto function prev<CR>zOzt")
-nmap("gc", ":Semshi goto class next<CR>zOzt")
-nmap("gC", "k:Semshi goto class prev<CR>zOzt")
--- Got to next and previous linting error
-nmap("<silent>]w", ":ALENext<CR>zOzz")
-nmap("<silent>[w", ":ALEPrevious<CR>zOzz")
--- vimspector
-nmap("<leader>dd", ":call vimspector#Launch()<CR>")
-nmap("<leader>de", ":call vimspector#Reset()<CR>")
-nmap("<leader>dc", ":call vimspector#Continue()<CR>")
 
-nmap("<leader>dt", ":call vimspector#ToggleBreakpoint()<CR>")
-nmap("<leader>dT", ":call vimspector#ClearBreakpoints()<CR>")
-
-nmap("<leader>dk", "<Plug>VimspectorRestart")
-nmap("<leader>dh", "<Plug>VimspectorStepOut")
-nmap("<leader>dl", "<Plug>VimspectorStepInto")
-nmap("<leader>dj", "<Plug>VimspectorStepOver")
 nmap("do", ":DiffviewOpen<CR>")
 nmap("dc", ":DiffviewClose<CR>")

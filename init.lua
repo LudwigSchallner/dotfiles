@@ -1,4 +1,5 @@
-require('plugins')
+require("plugins")
+require("lsp-config")
 
 -- settings
 vim.opt.background = "dark"
@@ -16,12 +17,7 @@ vim.opt.termguicolors = true
 vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.mouse = "nv"
+vim.b.surround_indent = 0 -- surround
 
-vim.g.SuperTabDefaultCompletionType = "<c-n>"-- scroll down with supertab
-vim.g.ale_echo_msg_format = '%linter% says %code%: %s'
-vim.b.surround_indent = 1 -- surround
-
--- auto commands
-require("autocmd")
--- key mappings
-require("keymap")
+require("autocmd") -- auto commands
+require("keymap") -- key mappings

@@ -1,10 +1,9 @@
 local autocmd = vim.api.nvim_create_autocmd
 
-autocmd("BufWritePost", { pattern = "*.py", command = "silent !black %" })
 autocmd("FileType", { pattern = "*.yaml", command = "setlocal ts=2 sts=2 sw=2 expandtab" })
 
 local ignore_buftype = { "quickfix", "nofile", "help" }
-local ignore_filetype = { "gitcommit", "gitrebase"}
+local ignore_filetype = { "gitcommit", "gitrebase" }
 
 local function OpenOnLastPosition()
   if vim.tbl_contains(ignore_buftype, vim.bo.buftype) then

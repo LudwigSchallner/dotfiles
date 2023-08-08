@@ -15,7 +15,6 @@ local plugins = {
 	"preservim/nerdtree",            -- File system navigation
 	"Xuyuanp/nerdtree-git-plugin",   -- Git integration for NerdTree
 	"mechatroner/rainbow_csv",       --
-	"dense-analysis/ale",            -- Asynchronous linting
 	"ervandew/supertab",            -- Tab completion in insert mode
 	"jiangmiao/auto-pairs",          -- Automatically close brackets
 	"junegunn/fzf",
@@ -35,20 +34,14 @@ local plugins = {
 	"vim-airline/vim-airline",      -- Nice status line
 	"zhou13/vim-easyescape",        -- Map jk and kj to <ESC>
 	"sindrets/diffview.nvim",
-	"zaldih/themery.nvim", 
-  'davidhalter/jedi-vim',          -- Python IDE features
-  'deoplete-plugins/deoplete-jedi',
-	'deoplete-plugins/deoplete-dictionary',
+	"zaldih/themery.nvim",
 	'wookayin/semshi',
   'nvim-treesitter/nvim-treesitter',
-  {
-    "williamboman/mason.nvim",
-    opts={
-      ensure_installed = {
-        "debugpy",
-      },
-    },
-  },
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-nvim-lsp',
   {
     "mfussenegger/nvim-dap",
   },
@@ -70,14 +63,14 @@ local plugins = {
       end
     end
   },
-  { 
+  {
     "mfussenegger/nvim-dap-python",
     ft = "python",
     dependencies={
         "mfussenegger/nvim-dap",
         "rcarriga/nvim-dap-ui",
     },
-    config = function(_, opts)
+    config = function(_, _)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
       require('dap-python').test_runner = 'pytest'
@@ -104,7 +97,7 @@ local plugins = {
     end
   },
 }
-local opts = {} 
+local opts = {}
 
 require("lazy").setup(plugins, opts)
 require("gitlab").setup({
