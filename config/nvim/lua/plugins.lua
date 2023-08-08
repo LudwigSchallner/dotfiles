@@ -12,35 +12,77 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	'preservim/nerdtree',            -- File system navigation
-	'Xuyuanp/nerdtree-git-plugin',   -- Git integration for NerdTree
-	'mechatroner/rainbow_csv',       --
-	'davidhalter/jedi-vim',          -- Python IDE features
-	'dense-analysis/ale',            -- Asynchronous linting
-	'ervandew/supertab',            -- Tab completion in insert mode
-	'jiangmiao/auto-pairs',          -- Automatically close brackets
-	'junegunn/fzf',
-	'majutsushi/tagbar',             -- Module/class tag bar
-	'mgedmin/python-imports.vim',    -- Auto import for Python
-	'ellisonleao/gruvbox.nvim',
-	'psf/black',
-	'sheerun/vim-polyglot',         -- Color syntax for any language
-	'tmhedberg/SimpylFold',         -- Python folding
-	'tpope/vim-eunuch',             -- UNIX commands
-	'tpope/vim-fugitive',           -- Git support
-	'tpope/vim-repeat',             -- '.' repeating maps from plugins
-	'tpope/vim-sensible',           -- Sensible defaults
-	'tpope/vim-surround',           -- Brackets and parenthesis and such
-	'tpope/vim-unimpaired',         -- See the help
-	'tveskag/nvim-blame-line',      -- Git blamer
-	'vim-airline/vim-airline',      -- Nice status line
-	'zhou13/vim-easyescape',        -- Map jk and kj to <ESC>
-	'Puremourning/vimspector',      -- Debugger
-	'sindrets/diffview.nvim',
-	'deoplete-plugins/deoplete-jedi',
+	"preservim/nerdtree",            -- File system navigation
+	"Xuyuanp/nerdtree-git-plugin",   -- Git integration for NerdTree
+	"mechatroner/rainbow_csv",       --
+	"dense-analysis/ale",            -- Asynchronous linting
+	"ervandew/supertab",            -- Tab completion in insert mode
+	"jiangmiao/auto-pairs",          -- Automatically close brackets
+	"junegunn/fzf",
+	"majutsushi/tagbar",             -- Module/class tag bar
+	"mgedmin/python-imports.vim",    -- Auto import for Python
+	"ellisonleao/gruvbox.nvim",
+	"psf/black",
+	"sheerun/vim-polyglot",         -- Color syntax for any language
+	"tmhedberg/SimpylFold",         -- Python folding
+	"tpope/vim-eunuch",             -- UNIX commands
+	"tpope/vim-fugitive",           -- Git support
+	"tpope/vim-repeat",             -- "." repeating maps from plugins
+	"tpope/vim-sensible",           -- Sensible defaults
+	"tpope/vim-surround",           -- Brackets and parenthesis and such
+	"tpope/vim-unimpaired",         -- See the help
+	"tveskag/nvim-blame-line",      -- Git blamer
+	"vim-airline/vim-airline",      -- Nice status line
+	"zhou13/vim-easyescape",        -- Map jk and kj to <ESC>
+	"sindrets/diffview.nvim",
+	"zaldih/themery.nvim", 
+  'davidhalter/jedi-vim',          -- Python IDE features
+  'deoplete-plugins/deoplete-jedi',
 	'deoplete-plugins/deoplete-dictionary',
 	'wookayin/semshi',
-	'zaldih/themery.nvim', 
+  'nvim-treesitter/nvim-treesitter',
+  {
+    "williamboman/mason.nvim",
+    opts={
+      ensure_installed = {
+        "debugpy",
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require("dap")
+      local dapui = require("dapui")
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end
+  },
+  { 
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies={
+        "mfussenegger/nvim-dap",
+        "rcarriga/nvim-dap-ui",
+    },
+    config = function(_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+      require('dap-python').test_runner = 'pytest'
+    end,
+  },
 	{
     "harrisoncramer/gitlab.nvim",
     dependencies = {
@@ -53,10 +95,10 @@ local plugins = {
     end,
 	},
 	{
-    'tzachar/highlight-undo.nvim',
+    "tzachar/highlight-undo.nvim",
     config = function()
-      require('highlight-undo').setup({
-      hlgroup = 'HighlightUndo',
+      require("highlight-undo").setup({
+      hlgroup = "HighlightUndo",
       duration = 300,
       })
     end
