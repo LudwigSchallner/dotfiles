@@ -6,24 +6,23 @@
 - clean: ['~']
 - create:
     - ~/.local/bin
-    - ~/.config/nvim/lua/
     - ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/
+    - ~/.config/nvim/lua/
 - shell:
     - command: git submodule update --init --recursive
       description: Installing submodules
 - link:
     # yamllint disable rule:line-length
-    ~/.antigen: submodules/antigen
     ~/.config/feh/themes: config/feh/themes
-    ~/.config/i3/config: config/i3.config
-    ~/.config/i3blocks.conf: config/i3blocks.conf
     ~/.config/nvim/init.lua: init.lua
     ~/.config/ranger/rc.conf: config/ranger/rc.conf
     ~/.config/regolith2/i3/config.d/40_default-style: config/regolith2/i3/config.d/40_default-style
     ~/.gitignore:
     ~/.p10k.zsh:
     ~/.zshrc:
-    ~/.config/nvim/lua/plugins.lua: config/nvim/lua/plugins.lua 
+    ~/.config/nvim/lua/autocmd.lua: config/nvim/lua/autocmd.lua
+    ~/.config/nvim/lua/plugins.lua: config/nvim/lua/plugins.lua
+    ~/.config/nvim/lua/keymap.lua: config/nvim/lua/keymap.lua
     ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/python.json: config/vimspector/python.json
 - shell:
     - command: |
@@ -38,14 +37,6 @@
         wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -O ~/.local/bin/nvim
         chmod +x ~/.local/bin/nvim
       description: Download and reinstall nvim
-    - command: |
-        rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-        git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-      description: Install packer as neovim package manager
-    - command: ~/.local/bin/nvim +PackerCompile +qall
-      description: Compile vim plugins
-    - command: ~/.local/bin/nvim +PackerInstall +qall
-      description: Install nvim plugins
     - command: cp -r ./fonts/ ~/.local/share/fonts/
       description: Install fonts
       # yamllint disable rule:line-length
