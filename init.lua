@@ -1,4 +1,5 @@
 require("plugins")
+require("completions")
 require("lsp-config")
 
 -- settings
@@ -18,6 +19,7 @@ vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.mouse = "nv"
 vim.b.surround_indent = 0 -- surround
+
 
 require("autocmd") -- auto commands
 require("keymap") -- key mappings
