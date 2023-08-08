@@ -15,11 +15,9 @@ vim.opt.spell = true      -- Spell checking per default
 vim.opt.wrap = false      --  Disable line wrapping (with unimpaired use yow to toggle)
 vim.opt.cursorline = true -- Highlight the current line
 vim.opt.termguicolors = true
-vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.mouse = "nv"
 vim.b.surround_indent = 0 -- surround
-
 
 require("autocmd") -- auto commands
 require("keymap") -- key mappings

@@ -17,6 +17,7 @@ end
 
 
 -- Save and quit quickly
+vim.g.mapleader = " "
 nmapsilent("<leader>w", ":wa<CR>")
 nmapsilent("<leader>q", ":x<CR>")
 nmapsilent("<leader>x", ":xa<CR>")
