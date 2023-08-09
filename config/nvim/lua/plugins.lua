@@ -14,12 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
   {
     "jose-elias-alvarez/null-ls.nvim",
+    dependencies="nvim-lua/plenary.nvim",
     ft = {
       "python"
     },
-    opts = function ()
-      return require("null-ls")
-    end
   },
   {
     "nvim-tree/nvim-tree.lua",
@@ -178,3 +176,26 @@ require("gitlab").setup({
     }
   }
 })
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local sources = {
+    require("null-ls").builtins.formatting.black,
+    require("null-ls").builtins.formatting.isort,
+    require("null-ls").builtins.diagnostics.mypy,
+    require("null-ls").builtins.diagnostics.ruff,
+}
+require("null-ls").setup({
+  debug=true,
+  sources=sources,
+  on_attach = function(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                    -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+                    vim.lsp.buf.format({ async = false })
+                end,
+            })
+        end
+    end,})
