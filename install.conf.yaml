@@ -6,8 +6,6 @@
 - clean: ['~']
 - create:
     - ~/.local/bin
-    - ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/
-    - ~/.config/nvim/lua/
 - shell:
     - command: git submodule update --init --recursive
       description: Installing submodules
@@ -20,12 +18,10 @@
     ~/.gitignore:
     ~/.p10k.zsh:
     ~/.zshrc:
-    ~/.config/nvim/lua/autocmd.lua: config/nvim/lua/autocmd.lua
-    ~/.config/nvim/lua/plugins.lua: config/nvim/lua/plugins.lua
-    ~/.config/nvim/lua/keymap.lua: config/nvim/lua/keymap.lua
-    ~/.config/nvim/lua/lsp-config.lua: config/nvim/lua/lsp-config.lua
-    ~/.config/nvim/lua/completions.lua: config/nvim/lua/completions.lua
-    ~/.local/share/nvim/site/pack/packer/start/vimspector/configurations/linux/python/python.json: config/vimspector/python.json
+    ~/.config/nvim/lua/: 
+      path: config/nvim/lua/**
+      glob: true
+      create: true
 - shell:
     - command: |
         if ! cat ~/.bashrc | grep "exec zsh"
