@@ -17,7 +17,6 @@ end
 
 
 -- Save and quit quickly
-vim.g.mapleader = " "
 nmapsilent("<leader>w", ":wa<CR>")
 nmapsilent("<leader>q", ":x<CR>")
 nmapsilent("<leader>x", ":xa<CR>")
@@ -30,8 +29,6 @@ nmap("<C-j>", "<C-w><C-j>")
 -- Navigation between tabs
 nmap("<C-f>", ":tabnext<CR>")
 nmap("<C-d>", ":tabprevious<CR>")
--- NERDTree
-nmap("<C-n>", ":NERDTreeToggleVCS<CR>")
 -- Fugitive
 nmap("gs", ":wa<CR> :vertical Git<CR>")
 nmap("<leader>gp", ":Git push<CR>")

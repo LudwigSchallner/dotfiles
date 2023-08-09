@@ -1,8 +1,5 @@
+vim.g.mapleader = " "
 require("plugins")
-require("completions")
-require("lsp-config")
-
--- settings
 vim.opt.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
 vim.opt.showcmd = true
@@ -18,6 +15,7 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.mouse = "nv"
 vim.b.surround_indent = 0 -- surround
-
-require("autocmd") -- auto commands
+require("completions")
+require("lsp-config")
 require("keymap") -- key mappings
+require("autocmd") -- auto commands

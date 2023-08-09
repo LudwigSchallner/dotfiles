@@ -12,8 +12,51 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	"preservim/nerdtree",            -- File system navigation
-	"Xuyuanp/nerdtree-git-plugin",   -- Git integration for NerdTree
+  {
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+    init = function()
+      vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { silent = true })
+      vim.keymap.set("n", "<C-N>", ":NvimTreeFindFile<CR>", { silent = true })
+    end,
+    config = function()
+      require("nvim-tree").setup({
+        filters = {
+          dotfiles = true,
+          custom = { "__pycache__" },
+        },
+        renderer = {
+          icons = {
+            show = {
+              folder_arrow = false,
+            },
+            glyphs = {
+              default = "",
+              folder = {
+                default = "▶",
+                open = "▼",
+                empty = "▷",
+                empty_open = "▽",
+              },
+            },
+          },
+        },
+        on_attach = function(bufnr)
+          local api = require("nvim-tree.api")
+
+          -- Default mappings
+          api.config.mappings.default_on_attach(bufnr)
+
+          -- Custom mappings
+          local function opts(desc)
+            return { desc = "nvim-tree: " .. desc, buffer = bufnr, silent = true, nowait = true }
+          end
+          vim.keymap.set("n", "<cr>", api.node.open.no_window_picker, opts("Open: No Window Picker"))
+          vim.keymap.set("n", "<2-LeftMouse>", api.node.open.no_window_picker, opts("Open: No Window Picker"))
+        end,
+      })
+    end,
+  },
 	"mechatroner/rainbow_csv",       --
 	"ervandew/supertab",            -- Tab completion in insert mode
 	"jiangmiao/auto-pairs",          -- Automatically close brackets
