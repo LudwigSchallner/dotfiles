@@ -1,5 +1,9 @@
 require("mason").setup({
-  ensure_installed={ "debugpy", },
+  ensure_installed={
+     "debugpy",
+     "mypy",
+     "ruff",
+   },
   })
 require("mason-lspconfig").setup({
     ensure_installed = {"lua_ls", "pyright"}

@@ -13,6 +13,15 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = {
+      "python"
+    },
+    opts = function ()
+      return require("null-ls")
+    end
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
     init = function()
