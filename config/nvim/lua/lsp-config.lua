@@ -29,6 +29,18 @@ require("lspconfig").lua_ls.setup {
 }
 require("lspconfig").pyright.setup {
   on_attach=on_attach,
-  capabilities = capabilities,
-  filetypes = {"python"}
+  filetypes = {"python"},
+  capabilities = (function()
+            local _capabilities = vim.lsp.protocol.make_client_capabilities()
+            _capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+            return _capabilities
+          end)(),
+  settings = {
+            python = {
+              analysis = {
+                useLibraryCodeForTypes = true,
+                typeCheckingMode = "off",
+              },
+            },
+          },
 }
