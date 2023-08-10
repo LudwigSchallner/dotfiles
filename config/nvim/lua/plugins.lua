@@ -186,6 +186,7 @@ local sources = {
     require("null-ls").builtins.formatting.isort,
     require("null-ls").builtins.diagnostics.mypy,
     require("null-ls").builtins.diagnostics.ruff,
+    require("null-ls").builtins.diagnostics.pydocstyle,
 }
 require("null-ls").setup({
   debug=true,
