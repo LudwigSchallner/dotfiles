@@ -3,6 +3,9 @@ require("mason-lspconfig").setup({
     ensure_installed = {
       "lua_ls",
       "pyright",
+      "jsonls",
+      "yamlls",
+      "arduino_language_server",
     }
   })
 
@@ -29,6 +32,18 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
+}
+require("lspconfig").arduino_language_server.setup {
+  on_attach=on_attach,
+  capabilities = capabilities,
+}
+require("lspconfig").jsonls.setup {
+  on_attach=on_attach,
+  capabilities = capabilities,
+}
+require("lspconfig").yamlls.setup {
+  on_attach=on_attach,
+  capabilities = capabilities,
 }
 require("lspconfig").pyright.setup {
   on_attach=on_attach,
