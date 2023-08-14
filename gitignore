@@ -1,5 +1,5 @@
 # Global ignore file
-
+__pycache__/
 # Vim recovery files
 .*.swp
 
