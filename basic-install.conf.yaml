@@ -1,0 +1,29 @@
+---
+- defaults:
+    link:
+      relink: true
+      create: true
+- clean: ['~']
+- create:
+    - ~/.local/bin
+- shell:
+    - command: git submodule update --init --recursive
+      description: Installing submodules
+- link:
+    # yamllint disable rule:line-length
+    ~/.config/feh/themes: config/feh/themes
+    ~/.config/ranger/rc.conf: config/ranger/rc.conf
+    ~/.gitignore:
+    ~/.p10k.zsh:
+    ~/.zshrc:
+- shell:
+    - command: |
+        if ! cat ~/.bashrc | grep "exec zsh"
+        then
+          echo "which zsh > /dev/null  && exec zsh" >> ~/.bashrc
+        fi
+      description: Append 'exec zsh' to bashrc
+      # yamllint disable rule:line-length
+    - command: cp -r ./fonts/ ~/.local/share/fonts/
+      description: Install fonts
+      # yamllint disable rule:line-length
