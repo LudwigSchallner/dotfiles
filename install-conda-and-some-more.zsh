@@ -7,7 +7,7 @@ rm Miniconda3-latest-Linux-x86_64.sh
 
 source zshrc
 
-pip install --force-reinstall --user pipx pynvim jedi
+pip install --force-reinstall --user pipx
 pipx install --force black
 pipx install --force dvc"[all]"
 pipx install --force pre-commit
