@@ -2,10 +2,8 @@
 
 These are my configuration files for
 
-  * vim
+  * nvim
   * zsh
-  * i3
-  * more ...
 
 The basic idea is to link the files in this repository to the corresponding
 configuration files (e.g. `~/.vimrc -> vimrc`).  To see which files get linked,
@@ -20,7 +18,6 @@ The following commands are assumed to be available for a successful installation
 * `wget` to download `nvim`
 * `pip3` to install dependencies needed for `nvim` and `vim`
 * `fuse` to be able to run the `nvim` AppImage
-* `vim` so that the vim plugins can be installed
 
 If these commands are missing, then the install script will output an error,
 but nevertheless the config files will be installed.
@@ -32,19 +29,22 @@ it is missing.
 
 Clone
 ```bash
-git clone https://github.com/LudwigSchallner/dotfiles ~/.dotfiles
+git clone https://github.com/Otterpatsch/dotfiles ~/.dotfiles
 ```
 
 To install, enter:
 ```bash
 cd ~/.dotfiles
 ./install
+or for no nvim use
+./install-basic 
 ```
 
 The zsh theme installed by default is
 [powerlevel10k](https://github.com/romkatv/powerlevel10k) for which it is
 recommended to install the [Meslo Nerd
 Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
+included in the fonts directory (which will be copyed into ~/.local/share/fonts/. 
 
 ### I just want part of it
 
@@ -73,12 +73,11 @@ Meslo Nerd Font is recommended, see above.
 Checkout `zshrc` to see which plugins are activated, they are defined right
 after `bundle` (any recommendation is welcome!).
 
-## Vim
+## NVim
 
-Vim plugins are manage by [vim-plug](https://github.com/junegunn/vim-plug)
-which is shipped as a submodule.  To install all the plugins, run
-`:PlugInstall` inside vim, or
-```bash
-vim +PlugInstall
-```
-from a terminal.
+NVim plugins are manage by [Lazy](https://github.com/folke/lazy.nvim)
+As soon as you open nvim those should be installed. You may wanna check the health via :checkhealth lazy.
+
+### LSP-Plugins
+
+LSP-Plugins are installed via Mason. To install the currently included in the settings one run `:MasonInstall mypy black isort pydocstyle ruff `
