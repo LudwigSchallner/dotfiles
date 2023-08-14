@@ -11,6 +11,7 @@
       description: Installing submodules
 - link:
     # yamllint disable rule:line-length
+    ~/.antigen: submodules/antigen
     ~/.config/feh/themes: config/feh/themes
     ~/.config/nvim/init.lua: init.lua
     ~/.config/ranger/rc.conf: config/ranger/rc.conf
