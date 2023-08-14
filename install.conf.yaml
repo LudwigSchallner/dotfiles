@@ -14,7 +14,6 @@
     ~/.config/feh/themes: config/feh/themes
     ~/.config/nvim/init.lua: init.lua
     ~/.config/ranger/rc.conf: config/ranger/rc.conf
-    ~/.config/regolith2/i3/config.d/40_default-style: config/regolith2/i3/config.d/40_default-style
     ~/.gitignore:
     ~/.p10k.zsh:
     ~/.zshrc:
