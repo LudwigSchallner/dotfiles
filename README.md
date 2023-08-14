@@ -36,7 +36,10 @@ To install, enter:
 ```bash
 cd ~/.dotfiles
 ./install
+```
 or for no nvim use
+```
+cd ~/.dotfiles
 ./install-basic 
 ```
 
@@ -45,6 +48,14 @@ The zsh theme installed by default is
 recommended to install the [Meslo Nerd
 Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 included in the fonts directory (which will be copyed into ~/.local/share/fonts/. 
+
+If you also want to install conda and the following packages(which are installed via pipx so they are environment wide installed)
+  - black
+  - dvc"[all]"
+  - pre-commit
+  - ranger-fm
+  - thefuck
+  - tox
 
 ### I just want part of it
 
