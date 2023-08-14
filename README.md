@@ -50,6 +50,7 @@ Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-power
 included in the fonts directory (which will be copyed into ~/.local/share/fonts/. 
 
 If you also want to install conda and the following packages(which are installed via pipx so they are environment wide installed)
+run `zsh install-conda-and-some-more.zsh`
   - black
   - dvc"[all]"
   - pre-commit
