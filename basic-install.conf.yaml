@@ -11,6 +11,7 @@
       description: Installing submodules
 - link:
     # yamllint disable rule:line-length
+    ~/.antigen: submodules/antigen
     ~/.config/feh/themes: config/feh/themes
     ~/.config/ranger/rc.conf: config/ranger/rc.conf
     ~/.gitignore:
