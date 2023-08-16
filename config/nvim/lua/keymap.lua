@@ -34,5 +34,5 @@ nmap("gs", ":wa<CR> :vertical Git<CR>")
 nmap("<leader>gp", ":Git push<CR>")
 nmap("<leader>gb", ":Git blame<CR>")
 
-nmap("do", ":DiffviewOpen<CR>")
-nmap("dc", ":DiffviewClose<CR>")
+nmap("<leader>dv", ":DiffviewOpen ")
+nmap("<leader>tc", ":tabclose<CR>")
