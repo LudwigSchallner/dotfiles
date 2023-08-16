@@ -19,9 +19,8 @@
     ~/.p10k.zsh:
     ~/.zshrc:
     ~/.config/nvim/lua/: 
-      path: config/nvim/lua/**
+      path: config/nvim/lua/*
       glob: true
-      create: true
 - shell:
     - command: |
         if ! cat ~/.bashrc | grep "exec zsh"
