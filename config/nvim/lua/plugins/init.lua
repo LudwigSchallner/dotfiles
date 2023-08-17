@@ -1,8 +1,4 @@
 return {
-  {
-  'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
   "mechatroner/rainbow_csv",       --
   "ervandew/supertab",            -- Tab completion in insert mode
   "junegunn/fzf",
