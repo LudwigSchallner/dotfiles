@@ -22,7 +22,13 @@ return {
   "tpope/vim-fugitive",           -- Git support
   "tpope/vim-repeat",             -- "." repeating maps from plugins
   "tpope/vim-sensible",           -- Sensible defaults
-  "tpope/vim-surround",           -- Brackets and parenthesis and such
+  {
+  "echasnovski/mini.surround",
+  version = false,
+  config= function ()
+   require("mini.surround").setup()
+  end,
+  },
   "tpope/vim-unimpaired",         -- See the help
   "tveskag/nvim-blame-line",      -- Git blamer
   "vim-airline/vim-airline",      -- Nice status line
