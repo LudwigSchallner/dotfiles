@@ -7,7 +7,6 @@ return {
   "ervandew/supertab",            -- Tab completion in insert mode
   "jiangmiao/auto-pairs",          -- Automatically close brackets
   "junegunn/fzf",
-  "majutsushi/tagbar",             -- Module/class tag bar
   "mgedmin/python-imports.vim",    -- Auto import for Python
   "ellisonleao/gruvbox.nvim",
   -- "psf/black",
