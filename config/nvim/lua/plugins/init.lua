@@ -5,13 +5,13 @@ return {
   },
   "mechatroner/rainbow_csv",       --
   "ervandew/supertab",            -- Tab completion in insert mode
-  "jiangmiao/auto-pairs",          -- Automatically close brackets
   "junegunn/fzf",
   "mgedmin/python-imports.vim",    -- Auto import for Python
   "ellisonleao/gruvbox.nvim",
   -- "psf/black",
   -- "sheerun/vim-polyglot",         -- Color syntax for any language
   "tmhedberg/SimpylFold",         -- Python folding
+  "jiangmiao/auto-pairs",          -- Automatically close brackets
   "tpope/vim-eunuch",             -- UNIX commands
   "tpope/vim-fugitive",           -- Git support
   "tpope/vim-repeat",             -- "." repeating maps from plugins
