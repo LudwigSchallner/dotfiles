@@ -11,7 +11,13 @@ return {
   -- "psf/black",
   -- "sheerun/vim-polyglot",         -- Color syntax for any language
   "tmhedberg/SimpylFold",         -- Python folding
-  "jiangmiao/auto-pairs",          -- Automatically close brackets
+  {
+  "echasnovski/mini.pairs",
+  version = false,
+  config= function ()
+   require("mini.pairs").setup()
+  end,
+  },
   "tpope/vim-eunuch",             -- UNIX commands
   "tpope/vim-fugitive",           -- Git support
   "tpope/vim-repeat",             -- "." repeating maps from plugins
