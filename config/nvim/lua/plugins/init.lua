@@ -22,13 +22,6 @@ return {
   "tpope/vim-fugitive",           -- Git support
   "tpope/vim-repeat",             -- "." repeating maps from plugins
   "tpope/vim-sensible",           -- Sensible defaults
-  {
-  "echasnovski/mini.surround",
-  version = false,
-  config= function ()
-   require("mini.surround").setup()
-  end,
-  },
   "tpope/vim-unimpaired",         -- See the help
   "tveskag/nvim-blame-line",      -- Git blamer
   "vim-airline/vim-airline",      -- Nice status line
@@ -41,7 +34,7 @@ return {
   "zaldih/themery.nvim",
   "wookayin/semshi",
   "nvim-treesitter/nvim-treesitter",
-	"tree-sitter/tree-sitter-python",
+  "tree-sitter/tree-sitter-python",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
