@@ -39,6 +39,7 @@ return {
           end
           vim.keymap.set("n", "<cr>", api.node.open.no_window_picker, opts("Open: No Window Picker"))
           vim.keymap.set("n", "<2-LeftMouse>", api.node.open.no_window_picker, opts("Open: No Window Picker"))
+          vim.keymap.set("n", "s", api.node.open.vertical, opts('Open: Vertical Split'))
         end,
       })
     end,
