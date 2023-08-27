@@ -6,6 +6,7 @@ return {
      restriction_mode="hint",
    },
   },
+  { "stevearc/dressing.nvim", event = "VeryLazy" },
   "mechatroner/rainbow_csv",       --
   "ervandew/supertab",            -- Tab completion in insert mode
   "junegunn/fzf",
