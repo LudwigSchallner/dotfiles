@@ -6,7 +6,16 @@ return {
      restriction_mode="hint",
    },
   },
-  { "stevearc/dressing.nvim", event = "VeryLazy" },
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    config = function ()
+       require("dressing").setup({
+       input = {
+         enable = true
+  	}})
+    end
+  },
   {
     "lambdalisue/suda.vim",
     config = function ()
