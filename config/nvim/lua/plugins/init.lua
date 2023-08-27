@@ -7,6 +7,12 @@ return {
    },
   },
   { "stevearc/dressing.nvim", event = "VeryLazy" },
+  {
+    "lambdalisue/suda.vim",
+    config = function ()
+      vim.g.suda_nopass = 1
+    end,
+  },
   "mechatroner/rainbow_csv",       --
   "ervandew/supertab",            -- Tab completion in insert mode
   "junegunn/fzf",
