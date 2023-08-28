@@ -38,11 +38,6 @@ return {
   "tveskag/nvim-blame-line",      -- Git blamer
   "vim-airline/vim-airline",      -- Nice status line
   "zhou13/vim-easyescape",        -- Map jk and kj to <ESC>
-  { "sindrets/diffview.nvim",
-    config = {
-      use_icons=false,
-    }
-  },
   "zaldih/themery.nvim",
   "wookayin/semshi",
   "nvim-treesitter/nvim-treesitter",
