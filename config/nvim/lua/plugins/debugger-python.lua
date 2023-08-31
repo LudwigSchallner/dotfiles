@@ -10,13 +10,4 @@ return {
       require("dap-python").setup(path)
       require("dap-python").test_runner = "pytest"
     end,
-  },
-	{
-    "tzachar/highlight-undo.nvim",
-    config = function()
-      require("highlight-undo").setup({
-      hlgroup = "HighlightUndo",
-      duration = 300,
-      })
-    end
-  }
+}
