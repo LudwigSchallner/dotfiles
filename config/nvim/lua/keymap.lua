@@ -35,3 +35,6 @@ nmap("<leader>gp", ":Git push<CR>")
 nmap("<leader>gb", ":Git blame<CR>")
 
 nmap("<leader>tc", ":tabclose<CR>")
+
+nmap("<leader>db", ":DapToggleBreakpoint<CR>")
+nmap("<leader>ds", ":DapContinue<CR>")
