@@ -40,7 +40,6 @@ return {
   "zhou13/vim-easyescape",        -- Map jk and kj to <ESC>
   "zaldih/themery.nvim",
   "wookayin/semshi",
-  "nvim-treesitter/nvim-treesitter",
   "tree-sitter/tree-sitter-python",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
