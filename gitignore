@@ -12,3 +12,4 @@ tags.temp
 .idea
 
 .gitlab.nvim
+.null-ls*
