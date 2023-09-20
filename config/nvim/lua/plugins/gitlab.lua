@@ -8,6 +8,12 @@ return {
   },
   build = function () require("gitlab.server").build() end, -- Builds the Go binary
   config = function()
-    require("gitlab").setup()
+    local gitlab = require("gitlab")
+    require("gitlab").setup({
+	reviewer = "diffview",
+    })
+    vim.keymap.set("n", "<leader>gls", gitlab.summary)
+    vim.keymap.set("n", "<leader>gld", gitlab.toggle_discussions)
+
   end,
 }
