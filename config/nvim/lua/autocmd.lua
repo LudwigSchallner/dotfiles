@@ -1,6 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 
-autocmd("FileType", { pattern = "*.yaml", command = "setlocal ts=2 sts=2 sw=2 expandtab" })
+autocmd("FileType", { pattern = "*.yaml|*.lua", command = "setlocal ts=2 sts=2 sw=2 expandtab" })
 
 local ignore_buftype = { "quickfix", "nofile", "help" }
 local ignore_filetype = { "gitcommit", "gitrebase" }
