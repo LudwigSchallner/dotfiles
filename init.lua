@@ -30,7 +30,7 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.mouse = "nv"
 vim.b.surround_indent = 0 -- surround
-require("completions")
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 require("lsp-config")
 require("keymap") -- key mappings
 require("autocmd") -- auto commands
