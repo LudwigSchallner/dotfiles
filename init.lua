@@ -18,6 +18,7 @@ require("lazy").setup("plugins")
 vim.opt.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
 vim.opt.showcmd = true
+vim.opt.iskeyword:append("-")
 vim.opt.showmatch = true
 vim.opt.smartcase = true  -- Do smart case matching
 vim.opt.incsearch = true  -- Incremental search
