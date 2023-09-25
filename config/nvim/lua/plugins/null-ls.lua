@@ -9,7 +9,12 @@ return {
       local sources = {
           require("null-ls").builtins.formatting.black,
           require("null-ls").builtins.formatting.isort,
-          require("null-ls").builtins.diagnostics.mypy,
+          require("null-ls").builtins.diagnostics.mypy.with({
+	    extra_args = function()
+	    local virtual = os.getenv("CONDA_PREFIX") or os.getenv("CONDA_DEFAULT_ENV") or "/usr"
+	    return { "--python-executable", virtual .. "/bin/python3", "--ignore-missing-imports", }
+	    end,
+	  }),
           require("null-ls").builtins.diagnostics.ruff,
           require("null-ls").builtins.diagnostics.pydocstyle,
       }
@@ -29,5 +34,6 @@ return {
                   })
               end
           end,})
+
     end
   }

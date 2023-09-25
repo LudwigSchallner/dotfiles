@@ -7,10 +7,11 @@ local M = {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          ensure_installed = { "c", "lua", },
+          ensure_installed = {"python", "c", "lua", },
           sync_install = false,
-          highlight = { enable = true },
+          highlight = { enable = true, additional_vim_regex_highlighting = true, },
           indent = { enable = true },
+
         })
     end
 }
