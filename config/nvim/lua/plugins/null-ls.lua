@@ -7,8 +7,8 @@ return {
     config = function ()
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
       local sources = {
-          require("null-ls").builtins.formatting.black,
           require("null-ls").builtins.formatting.isort,
+          require("null-ls").builtins.formatting.black,
           require("null-ls").builtins.diagnostics.mypy.with({
 	    extra_args = function()
 	    local virtual = os.getenv("CONDA_PREFIX") or os.getenv("CONDA_DEFAULT_ENV") or "/usr"
