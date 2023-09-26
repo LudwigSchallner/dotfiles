@@ -23,12 +23,9 @@ return {
     end,
   },
   "mechatroner/rainbow_csv",       --
-  "ervandew/supertab",            -- Tab completion in insert mode
   "junegunn/fzf",
   "mgedmin/python-imports.vim",    -- Auto import for Python
   "ellisonleao/gruvbox.nvim",
-  -- "psf/black",
-  -- "sheerun/vim-polyglot",         -- Color syntax for any language
   "tmhedberg/SimpylFold",         -- Python folding
   "tpope/vim-eunuch",             -- UNIX commands
   "tpope/vim-fugitive",           -- Git support
