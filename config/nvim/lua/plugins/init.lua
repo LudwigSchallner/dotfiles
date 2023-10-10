@@ -34,6 +34,11 @@ return {
         -- refer to the configuration section below
       }
   end},
+  {
+    "chrisgrieser/nvim-puppeteer",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    lazy = false, -- plugin lazy-loads itself. Can also load on filetypes.
+  },
   "mechatroner/rainbow_csv",       --
   "junegunn/fzf",
   "mgedmin/python-imports.vim",    -- Auto import for Python
