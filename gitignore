@@ -1,5 +1,6 @@
 # Global ignore file
 __pycache__/
+dvc_plots/index.html
 # Vim recovery files
 .*.swp
 
