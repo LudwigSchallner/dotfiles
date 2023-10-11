@@ -63,6 +63,9 @@ alias dl="dvc pull "
 alias dr="dvc repro "
 alias drd="dvc repro --dry "
 alias dst="dvc status "
+if (( $+commands[kitten] )); then
+	alias ssh="kitten ssh"
+fi
 alias gbDal="git fetch -p && git branch -vv | grep gone | cut -d' ' -f 3 | grep . | xargs git branch -D"
 alias gbdal="git fetch -p && git branch -vv | grep gone | cut -d' ' -f 3 | grep . | xargs git branch -d"
 eval $(thefuck --alias)
