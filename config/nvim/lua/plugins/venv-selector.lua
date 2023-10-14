@@ -7,5 +7,8 @@ return 	{
 		},
 		opts = {
 			dap_enabled = true, -- makes the debugger work with venv
+      anaconda_base_path = "~/miniconda3/",
+      anaconda_envs_path = "~/miniconda3/envs/",
+      parents = 0,
 		},
 }
