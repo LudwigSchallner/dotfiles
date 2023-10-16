@@ -11,4 +11,10 @@ return 	{
       anaconda_envs_path = "~/miniconda3/envs/",
       parents = 0,
 		},
+		keys = {
+			{
+				"<leader>es", ":VenvSelect<CR>",
+				desc = "Add Docstring",
+			},
+		},
 }
