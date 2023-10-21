@@ -14,7 +14,6 @@ return 	{
 		keys = {
 			{
 				"<leader>es", ":VenvSelect<CR>",
-				desc = "Add Docstring",
 			},
 		},
 }
