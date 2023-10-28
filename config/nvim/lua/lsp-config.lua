@@ -42,7 +42,10 @@ require("lspconfig").jsonls.setup {
   capabilities = capabilities,
 }
 require'lspconfig'.yamlls.setup{
-    on_attach = on_attach,
+    on_attach=function ()
+      on_attach()
+      vim.keymap.set('n', '<leader>rn', ":%s/\\<<C-r><C-w>\\>/", {})
+    end,
     capabilities = capabilities,
     settings = {
         yaml = {
