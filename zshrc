@@ -51,8 +51,8 @@ unset __conda_setup
 [[ -f $HOME/.environment ]] && . $HOME/.environment
 
 alias vim=nvim
-export LC_ALL="de_DE.UTF-8"
 export EDITOR=nvim
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 alias gd="git diff "
 alias gds="git diff --staged"
 alias gbc="git branch --create "
