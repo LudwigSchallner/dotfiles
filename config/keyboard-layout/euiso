@@ -11,7 +11,7 @@ xkb_symbols "basic"  {
 
     key <TLDE>	{[        grave,      asciitilde,           dead_grave,           dead_tilde  ]};
     key <AE01>	{[            1,          exclam,           exclamdown,          onesuperior  ]};
-    key <AE02>	{[            2,              at,          ordfeminine,          twosuperior  ]};
+    key <AE02>	{[            2,        quotedbl,          ordfeminine,          twosuperior  ]};
     key <AE03>	{[            3,      numbersign,            masculine,        threesuperior  ]};
     key <AE04>	{[            4,          dollar,             sterling,                  yen  ]};
     key <AE05>	{[            5,         percent,             EuroSign,                 cent  ]};
@@ -45,9 +45,9 @@ xkb_symbols "basic"  {
     key <AC07>	{[            j,               J,               uacute,               Uacute  ]};
     key <AC08>	{[            k,               K,                U0133,                U0132  ]}; // ĳ, Ĳ
     key <AC09>	{[            l,               L,               oslash,               Oslash  ]};
-    key <AC11>	{[   apostrophe,        quotedbl,           dead_acute,       dead_diaeresis  ]};
     key <BKSL> { [ 	asciitilde, numbersign	] };
     key <AC10>	{[    semicolon, 	colon,              degree,       periodcentered  ]};
+    key <AC11>	{[   apostrophe,        at,           dead_acute,       dead_diaeresis  ]};
 
     key <LSGT> { [  backslash,	bar		] };
     key <AB01>	{[            z,               Z,               agrave,               Agrave  ]};
