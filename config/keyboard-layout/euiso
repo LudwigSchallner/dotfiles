@@ -7,7 +7,7 @@
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "basic"  {
 
-    name[Group1] = "EurKEY (Otter)";
+    name[Group1] = "EurKEY (ISO)";
 
     key <TLDE>	{[        grave,      asciitilde,           dead_grave,           dead_tilde  ]};
     key <AE01>	{[            1,          exclam,           exclamdown,          onesuperior  ]};
@@ -45,7 +45,7 @@ xkb_symbols "basic"  {
     key <AC07>	{[            j,               J,               uacute,               Uacute  ]};
     key <AC08>	{[            k,               K,                U0133,                U0132  ]}; // ĳ, Ĳ
     key <AC09>	{[            l,               L,               oslash,               Oslash  ]};
-    key <AC10>	{[    colon, 	semicolon,              degree,       periodcentered  ]};
+    key <AC10>	{[    semicolon, 	colon,              degree,       periodcentered  ]};
     key <AC11>	{[   apostrophe,        quotedbl,           dead_acute,       dead_diaeresis  ]};
     key <BKSL> { [ 	asciitilde, numbersign	] };
 
