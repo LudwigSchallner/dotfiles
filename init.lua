@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-
 vim.opt.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
 vim.opt.showcmd = true
@@ -31,7 +30,7 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.mouse = "nv"
 vim.b.surround_indent = 0 -- surround
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 require("lsp-config")
-require("keymap") -- key mappings
+require("keymap")  -- key mappings
 require("autocmd") -- auto commands
