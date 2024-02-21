@@ -5,8 +5,10 @@ return {
 		opts = {
 			restriction_mode = "hint",
 			disable_mouse = false,
-			max_count = 10,
-			max_time = 1500,
+			restricted_keys = {
+				["j"] = {},
+				["k"] = {},
+			},
 		},
 	},
 	{
