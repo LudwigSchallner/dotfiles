@@ -59,10 +59,6 @@ return {
 	"vim-airline/vim-airline", -- Nice status line
 	"zhou13/vim-easyescape", -- Map jk and kj to <ESC>
 	"zaldih/themery.nvim",
-	{
-		"wookayin/semshi",
-		build = ":UpdateRemotePlugins<CR>",
-	},
 	"tree-sitter/tree-sitter-python",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
