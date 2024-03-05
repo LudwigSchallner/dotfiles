@@ -1,20 +1,19 @@
 -- functions for key mapping
 function map(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true})
+	vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
 end
 
 function nmap(shortcut, command)
-  map('n', shortcut, command)
+	map("n", shortcut, command)
 end
 
 function nmapsilent(shortcut, command)
-  vim.api.nvim_set_keymap('n', shortcut, command, {silent = true, noremap = true})
+	vim.api.nvim_set_keymap("n", shortcut, command, { silent = true, noremap = true })
 end
 
 function imap(shortcut, command)
-  map('i', shortcut, command)
+	map("i", shortcut, command)
 end
-
 
 -- Save and quit quickly
 nmapsilent("<leader>w", ":wa<CR>")
