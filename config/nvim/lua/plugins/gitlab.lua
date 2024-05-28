@@ -4,10 +4,10 @@ return {
 		"MunifTanjim/nui.nvim",
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim", -- Recommended but not required. Better UI for pickers.
-		enabled = true,
 	},
+	enabled = true,
 	build = function()
-		require("gitlab.server").build()
+		require("gitlab.server").build(true)
 	end, -- Builds the Go binary
 	config = function()
 		local gitlab = require("gitlab")
