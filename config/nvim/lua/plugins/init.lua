@@ -47,7 +47,6 @@ return {
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		lazy = false, -- plugin lazy-loads itself. Can also load on filetypes.
 	},
-	"github/copilot.vim",
 	"mechatroner/rainbow_csv", --
 	"junegunn/fzf",
 	"mgedmin/python-imports.vim", -- Auto import for Python
