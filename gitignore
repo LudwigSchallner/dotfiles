@@ -1,6 +1,7 @@
 # Global ignore file
 __pycache__/
 dvc_plots/index.html
+**/.ipynb_checkpoints
 # Vim recovery files
 .*.swp
 
@@ -17,3 +18,4 @@ tags.temp
 
 .coverage*
 .tox
+.ipynb_checkpoints
