@@ -18,8 +18,8 @@
     ~/.gitignore:
     ~/.p10k.zsh:
     ~/.zshrc:
-    ~/.config/nvim/lua/: 
-      path: config/nvim/lua/*
+    ~/.config/nvim/: 
+      path: config/nvim/*
       glob: true
 - shell:
     - command: |
