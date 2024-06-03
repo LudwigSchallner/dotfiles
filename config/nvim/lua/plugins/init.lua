@@ -51,7 +51,6 @@ return {
 	"junegunn/fzf",
 	"mgedmin/python-imports.vim", -- Auto import for Python
 	"ellisonleao/gruvbox.nvim",
-	"tmhedberg/SimpylFold", -- Python folding
 	"tpope/vim-eunuch", -- UNIX commands
 	"tpope/vim-fugitive", -- Git support
 	"tpope/vim-repeat", -- "." repeating maps from plugins
