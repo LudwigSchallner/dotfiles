@@ -34,3 +34,4 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 require("lsp-config")
 require("keymap") -- key mappings
 require("autocmd") -- auto commands
+vim.g.python3_host_prog = "~/miniconda3/bin/python"
