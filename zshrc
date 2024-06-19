@@ -16,6 +16,7 @@ antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle popstas/zsh-command-time
 
 antigen theme romkatv/powerlevel10k
 antigen apply
@@ -63,8 +64,9 @@ alias dl="dvc pull "
 alias dr="dvc repro "
 alias drd="dvc repro --dry "
 alias dst="dvc status "
+alias sshold="/usr/bin/ssh"
 if (( $+commands[kitten] )); then
-	alias ssh="kitten ssh"
+	alias ssh="kitty +kitten ssh"
 fi
 alias gbDal="git fetch -p && git branch -vv | grep gone | cut -d' ' -f 3 | grep . | xargs git branch -D"
 alias gbdal="git fetch -p && git branch -vv | grep gone | cut -d' ' -f 3 | grep . | xargs git branch -d"
