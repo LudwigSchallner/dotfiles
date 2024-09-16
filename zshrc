@@ -70,7 +70,6 @@ if (( $+commands[kitten] )); then
 fi
 alias gbDal="git fetch -p && git branch -vv | grep gone | cut -d' ' -f 3 | grep . | xargs git branch -D"
 alias gbdal="git fetch -p && git branch -vv | grep gone | cut -d' ' -f 3 | grep . | xargs git branch -d"
-eval $(thefuck --alias)
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/p10k.zsh.
 [[ ! -f ~/.dotfiles/p10k.zsh ]] || source ~/.dotfiles/p10k.zsh

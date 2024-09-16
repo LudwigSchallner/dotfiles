@@ -12,5 +12,4 @@ pipx install --force black
 pipx install --force dvc"[all]"
 pipx install --force pre-commit
 pipx install --force ranger-fm
-pipx install --force thefuck
 pipx install --force tox
