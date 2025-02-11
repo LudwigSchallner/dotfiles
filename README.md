@@ -58,6 +58,30 @@ run `zsh install-conda-and-some-more.zsh`
   - thefuck
   - tox
 
+### Custom Keyboard Layout
+See https://people.uleth.ca/~daniel.odonnell/Blog/custom-keyboard-in-linuxx11 
+```
+sudo cp config/keyboard-layout/euiso /usr/share/X11/xkb/symbols/
+```
+Now we need to let the OS know there is a new layout. Jump to the </layoutlist>
+```
+vim /usr/share/X11/xkb/rules/evdev.xml
+```
+and insert e.g. 
+```
+<layout>
+    <configItem>
+      <name>euiso</name>
+      <shortDescription>EurKey(ISO)</shortDescription>
+      <description>Custom EurKey for ISO keyboards</description>
+    </configItem>
+</layout>
+```
+refresh layouts 
+```
+sudo dpkg-reconfigure xkb-data
+```
+
 ### I just want part of it
 
 If you are in a hurry, just have a look at look at `install.conf.yaml`, it is
